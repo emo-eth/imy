@@ -9,11 +9,11 @@ else
 fi
 
 # Check if the zsh-syntax-highlighting plugin is already installed
-if [ -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
+if [ -d "$HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
   echo "zsh-syntax-highlighting plugin is already installed."
 else
   # Clone the zsh-syntax-highlighting plugin to the Oh My Zsh custom plugins directory
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 fi
 
 # Check if the zsh-syntax-highlighting plugin is already in the list of plugins

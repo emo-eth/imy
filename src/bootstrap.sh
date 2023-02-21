@@ -43,5 +43,3 @@ echo 'run "(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofi
 
 # make ~/dev if it does not exist
 mkdir -p ~/dev
-cd ~/dev
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
