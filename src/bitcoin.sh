@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the installation directory
-INSTALL_DIR="$HOME/dev/bitcoin-core"
+INSTALL_DIR="$HOME/dev/bitcoin"
 
 # Clone the Bitcoin Core repository if it doesn't already exist
 if [ -d "$INSTALL_DIR" ]; then
@@ -23,9 +23,23 @@ else
   echo "Checked out latest release of Bitcoin Core: $LATEST_RELEASE."
 fi
 
-# Configure and build Bitcoin Core
-./autogen.sh
-./configure
-make
+cd "$INSTALL_DIR"
 
-echo "Bitcoin Core installed and built."
+if [ -f "$INSTALL_DIR/src/bitcoind" ]; then
+  echo "Bitcoin Core is already built."
+else
+  ./autogen.sh
+  ./configure
+  make
+  echo "Bitcoin Core built."
+fi
+
+if [[ ":$PATH:" == *":$INSTALL_DIR/src:"* ]]; then
+  echo "Bitcoin Core is already in the PATH environment variable."
+else
+  echo "Adding Bitcoin Core to the PATH environment variable."
+  echo "export PATH=\"\$PATH:$INSTALL_DIR/src\"" >> "$HOME/.bash_profile"
+  source "$HOME/.bash_profile"
+fi
+
+echo "Bitcoin Core installed, built, and added to the PATH environment variable."
