@@ -38,8 +38,8 @@ if [[ ":$PATH:" == *":$INSTALL_DIR/src:"* ]]; then
   echo "Bitcoin Core is already in the PATH environment variable."
 else
   echo "Adding Bitcoin Core to the PATH environment variable."
-  echo "export PATH=\"\$PATH:$INSTALL_DIR/src\"" >> "$HOME/.bash_profile"
-  source "$HOME/.bash_profile"
+  echo "export PATH=\"\$PATH:$INSTALL_DIR/src\"" >> "$HOME/.zshrc"
+  source "$HOME/.zshrc"
 fi
 
 echo "Bitcoin Core installed, built, and added to the PATH environment variable."

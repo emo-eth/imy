@@ -29,6 +29,6 @@ if [[ ":$PATH:" == *":$INSTALL_DIR/build/bin:"* ]]; then
   echo "Erigon is already in the PATH environment variable."
 else
   echo "Adding Erigon to the PATH environment variable."
-  echo "export PATH=\"\$PATH:$INSTALL_DIR/build/bin\"" >> "$HOME/.bash_profile"
-  source "$HOME/.bash_profile"
+  echo "export PATH=\"\$PATH:$INSTALL_DIR/build/bin\"" >> "$HOME/.zshrc"
+  source "$HOME/.zshrc"
 fi

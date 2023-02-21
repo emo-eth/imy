@@ -40,8 +40,8 @@ if [[ ":$PATH:" == *":$INSTALL_DIR/target/release:"* ]]; then
   echo "Lighthouse is already in the PATH environment variable."
 else
   echo "Adding Lighthouse to the PATH environment variable."
-  echo "export PATH=\"\$PATH:$INSTALL_DIR/target/release\"" >> "$HOME/.bash_profile"
-  source "$HOME/.bash_profile"
+  echo "export PATH=\"\$PATH:$INSTALL_DIR/target/release\"" >> "$HOME/.zshrc"
+  source "$HOME/.zshrc"
 fi
 
 echo "Lighthouse installed, built, and added to the PATH environment variable."
