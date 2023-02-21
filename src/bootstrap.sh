@@ -37,6 +37,8 @@ curl -L get.huff.sh | bash
 huffup
 
 
+brew install --cask 1password/tap/1password-cli
+
 echo 'run "(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile" to finish setup'
 
 # make ~/dev if it does not exist
