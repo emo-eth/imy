@@ -1,8 +1,14 @@
 #!/bin/bash
 
-# Set the Git user name and email
-GIT_NAME="James Wenzel"
-GIT_EMAIL="wenzel.james.r@gmail.com"
+# Get the Git user name and email from environment variables
+GIT_NAME="$GIT_USER_NAME"
+GIT_EMAIL="$GIT_USER_EMAIL"
+
+# Check if the Git user name and email are set
+if [ -z "$GIT_NAME" ] || [ -z "$GIT_EMAIL" ]; then
+  echo "Error: Git user name and email environment variables are not set."
+  exit 1
+fi
 
 # Set the Git editor
 GIT_EDITOR="nano"
